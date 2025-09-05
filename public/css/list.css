@@ -1,0 +1,431 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+body {
+    background: linear-gradient(90deg, #DBF5FF);
+    display: flex;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 1050;
+    /* above main content */
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.profile-pic-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    position: relative;
+}
+
+.vet-logo {
+    margin-top: auto;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.vet-logo img {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.sidebar .nav-link {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #3E8BFF 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 17px;
+    box-shadow: 0 10px 20px rgba(62, 139, 255, 0.25);
+    transition: transform 0.08s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-archive a {
+    border-radius: 10px;
+    padding: 9px 20px;
+    margin-left: 10px;
+}
+
+.badge-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+    background-color: #e9f7ef;
+    color: #2e7d32;
+}
+
+/* Search Bar Styles */
+.search-container {
+    max-width: 300px;
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.search-box:focus-within {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    color: #6c757d;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 45px 12px 45px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #adb5bd;
+    font-style: italic;
+}
+
+.clear-search {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear-search:hover {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.clear-search:active {
+    transform: scale(0.95);
+}
+
+/* No results message */
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.no-results i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+/* Highlight search results */
+.highlight {
+    background-color: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+/* list.css */
+
+.table-custom {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    /* adds spacing between rows */
+}
+
+.table-custom thead th {
+    background-color: #343a40;
+    /* dark header */
+    color: #fff;
+    border: none;
+    text-align: center;
+    padding: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.table-custom tbody tr {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.table-custom tbody tr td {
+    border: none;
+    padding: 14px;
+    vertical-align: middle;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+    transition: 0.2s;
+}
+
+.table-custom img.pet-profile-pic {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #dee2e6;
+}
+
+.main-content {
+    margin-left: 0;
+    padding: 20px;
+}
+
+/* Profile dropdown styles */
+.profile-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.profile-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dropdown-content .profile-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-header h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.profile-header span {
+    display: block;
+    font-size: 13px;
+    color: gray;
+}
+
+.badge {
+    background: #cce5ff;
+    color: #007bff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Pet Details Modal Styling */
+.pet-modal {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.pet-modal-header {
+    background: linear-gradient(135deg, #6EC1FF 0%, #5AB0FF 35%, #3E8BFF 100%);
+    color: #fff;
+}
+
+.pet-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.pet-avatar-empty {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    background: repeating-linear-gradient(45deg, #f8f9fa, #f8f9fa 10px, #f1f3f5 10px, #f1f3f5 20px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 64px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* View QR Code button styles (scoped to the pet details modal) */
+#readRecordModal .modal-body button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 0;
+    background: linear-gradient(135deg, #6EC1FF 0%, #5AB0FF 35%, #3E8BFF 100%);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 10px 20px rgba(62, 139, 255, 0.25);
+    transition: transform 0.08s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+#readRecordModal .modal-body button:hover {
+    box-shadow: 0 12px 26px rgba(62, 139, 255, 0.32);
+    transform: translateY(-1px);
+}
+
+#readRecordModal .modal-body button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(62, 139, 255, 0.22);
+}
+
+#readRecordModal .modal-body button:focus-visible {
+    outline: 3px solid rgba(62, 139, 255, 0.35);
+    outline-offset: 2px;
+}
+
+/* Optional: ensure it sits nicely below the avatar */
+#readRecordModal .modal-body .col-12.col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #6c757d;
+}
+
+.detail-value {
+    font-size: 16px;
+    color: #212529;
+}
+
+.section-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.badge-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    background-color: #e9f7ef;
+    color: #2e7d32;
+}

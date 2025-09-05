@@ -1,0 +1,243 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+body {
+    background: linear-gradient(90deg, #DBF5FF);
+    display: flex;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 1050;
+    /* above main content */
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.profile-pic-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    position: relative;
+}
+
+.vet-logo {
+    margin-top: auto;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.vet-logo img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    align-items: center;
+    justify-self: center;
+}
+
+.sidebar .nav-link {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-content {
+    margin-left: 0;
+    padding: 20px;
+}
+
+/* Profile dropdown styles */
+.profile-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.profile-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dropdown-content .profile-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-header h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.profile-header span {
+    display: block;
+    font-size: 13px;
+    color: gray;
+}
+
+.badge {
+    background: #cce5ff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3E8BFF 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 17px;
+    box-shadow: 0 10px 20px rgba(62, 139, 255, 0.25);
+    transition: transform 0.08s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-archive a {
+    border-radius: 10px;
+    padding: 9px 20px;
+    margin-left: 10px;
+}
+
+.main-content .table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Inventory specific styling */
+.table thead th {
+    background-color: #f8f9fa;
+    color: #333;
+    vertical-align: middle;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.badge.bg-success {
+    background-color: #28a745 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+/* Action buttons */
+.btn-outline-primary.btn-sm i,
+.btn-outline-danger.btn-sm i {
+    pointer-events: none;
+}
+
+.btn-outline-primary.btn-sm:hover {
+    color: #fff;
+}
+
+.btn-outline-danger.btn-sm:hover {
+    color: #fff;
+}
+
+/* Add button spacing */
+.main-content .btn.btn-primary i {
+    margin-right: 6px;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #6EC1FF 0%, #5AB0FF 35%, #3E8BFF 100%);
+    color: #fff;
+}
+
+/* Modal tweaks */
+.modal-content {
+    border-radius: 12px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+
+/* Row highlight by status */
+tbody tr:has(.badge.bg-danger) {
+    background-color: #fff5f5;
+}
+
+tbody tr:has(.badge.bg-warning) {
+    background-color: #fffaf0;
+}
